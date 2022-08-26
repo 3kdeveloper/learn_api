@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:learn_api/views/post/post_detail_screen.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../model/PostModel.dart';
 
@@ -44,8 +45,9 @@ class _PostScreenState extends State<PostScreen> {
           future: getPost(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return Center(
+                child: LoadingAnimationWidget.threeRotatingDots(
+                    color: Theme.of(context).primaryColor, size: 50),
               );
             } else {
               return ListView.builder(

@@ -16,7 +16,8 @@ dependencies:
   get:
   http:
   loading_animation_widget:
-  flutter_svg:
+  shimmer:
+
 
 dev_dependencies:
   flutter_test:
